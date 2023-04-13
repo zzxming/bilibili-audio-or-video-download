@@ -54,10 +54,10 @@ export async function activityBiliVideoDownload() {
         requestSource(playinfo.data.dash.video[0].baseUrl)
             .then(res => {
                 let blob = new Blob([res]);
-                let url = window.URL.createObjectURL(blob, { type: 'audio/mp3' });
+                let url = window.URL.createObjectURL(blob, { type: 'video/mp4' });
                 let link = document.createElement('a');
                 link.href = url;
-                link.download = `${title}.mp3`;
+                link.download = `${title}.mp4`;
                 link.click();
                 window.URL.revokeObjectURL(url);
             })
